@@ -5,6 +5,8 @@
 package bioskop;
 
 import javax.swing.JOptionPane;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDate;
 
 /**
  *
@@ -50,7 +52,7 @@ public class GUIjava extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jmlTiket = new javax.swing.JTextField();
-        threeCheckBox = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
         jLabel8 = new javax.swing.JLabel();
         txtNama = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
@@ -80,6 +82,11 @@ public class GUIjava extends javax.swing.JFrame {
 
         buttonGroup1.add(jCheckBox2);
         jCheckBox2.setText("Ashiap Man");
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox2ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("VerTech.co");
 
@@ -107,11 +114,11 @@ public class GUIjava extends javax.swing.JFrame {
             }
         });
 
-        buttonGroup1.add(threeCheckBox);
-        threeCheckBox.setText("The Conjuring");
-        threeCheckBox.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(jCheckBox3);
+        jCheckBox3.setText("The Conjuring");
+        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                threeCheckBoxActionPerformed(evt);
+                jCheckBox3ActionPerformed(evt);
             }
         });
 
@@ -181,38 +188,36 @@ public class GUIjava extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jLabel7)
                             .addComponent(jLabel8)
-                            .addComponent(CheckOut))
+                            .addComponent(Reset))
                         .addGap(18, 18, 18)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jCheckBox1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jmlTiket, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Total, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(cmbHari, javax.swing.GroupLayout.Alignment.LEADING, 0, 68, Short.MAX_VALUE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(Reset)
-                            .addGap(53, 53, 53)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(txtNama, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(45, 45, 45))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jCheckBox2)
-                                    .addGap(51, 51, 51)))
-                            .addComponent(threeCheckBox))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
-                        .addGap(18, 18, 18))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jCheckBox1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jCheckBox2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtNama))
+                                .addGap(51, 51, 51)
+                                .addComponent(jCheckBox3))
+                            .addComponent(cmbHari, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CheckOut)
+                            .addComponent(jmlTiket, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
+                                .addGap(18, 18, 18))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(Total, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,7 +241,7 @@ public class GUIjava extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jCheckBox2)
-                            .addComponent(threeCheckBox))
+                            .addComponent(jCheckBox3))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jCheckBox1)
                         .addGap(29, 29, 29)
@@ -255,10 +260,11 @@ public class GUIjava extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(Total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Reset)
-                    .addComponent(CheckOut))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton2)
+                        .addComponent(CheckOut)))
                 .addGap(20, 20, 20)
                 .addComponent(jLabel2))
         );
@@ -274,9 +280,9 @@ public class GUIjava extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jmlTiketActionPerformed
 
-    private void threeCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threeCheckBoxActionPerformed
+    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_threeCheckBoxActionPerformed
+    }//GEN-LAST:event_jCheckBox3ActionPerformed
 
     private void txtNamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNamaActionPerformed
         // TODO add your handling code here:
@@ -285,6 +291,8 @@ public class GUIjava extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         int Bil = Integer.parseInt(jmlTiket.getText());
+        
+        
         if (cmbHari.getSelectedItem() == "Senin") {
             int hasil = Bil*30000;
             Total.setText(""+hasil);
@@ -304,6 +312,8 @@ public class GUIjava extends javax.swing.JFrame {
             int hasil = Bil*45000;
             Total.setText(""+hasil);
         }
+        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void TotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TotalActionPerformed
@@ -323,20 +333,39 @@ public class GUIjava extends javax.swing.JFrame {
     private void ResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResetActionPerformed
         // TODO add your handling code here:
         txtNama.setText("");
-        cmbHari.setSelectedItem("");
+        cmbHari.setSelectedIndex(0);
         jmlTiket.setText("");
         Total.setText("");
+        buttonGroup1.clearSelection();
+        
     }//GEN-LAST:event_ResetActionPerformed
 
     private void CheckOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckOutActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(this, "Untuk " + String.format(txtNama.getText())+ " Terima kasih telah membeli");
+        
+        if(jCheckBox1.isSelected()){
+            JOptionPane.showMessageDialog(this, String.format(txtNama.getText())+ " Terima kasih telah membeli tiket  " + String.format(jCheckBox1.getText()) + "\n" + "dengan harga Rp" + String.format(Total.getText()));
+        } else if (jCheckBox2.isSelected()){
+            JOptionPane.showMessageDialog(this, String.format(txtNama.getText())+ " Terima kasih telah membeli tiket  " + String.format(jCheckBox2.getText()) + "\n" + "dengan harga Rp"+String.format(Total.getText()));
+        } else {
+            JOptionPane.showMessageDialog(this, String.format(txtNama.getText())+ " Terima kasih telah membeli tiket  " + String.format(jCheckBox3.getText()) + "\n" + "dengan harga Rp"+String.format(Total.getText()));
+        }
+        
+        
+        
+        
+//        JOptionPane.showMessageDialog(this, String.format(txtNama.getText())+ " Terima kasih telah membeli");
         txtNama.setText("");
-        cmbHari.setSelectedItem("");
+        cmbHari.setSelectedIndex(0);
         jmlTiket.setText("");
         Total.setText("");
+        buttonGroup1.clearSelection();        
         
     }//GEN-LAST:event_CheckOutActionPerformed
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -368,8 +397,8 @@ public class GUIjava extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                JOptionPane.showMessageDialog(null, "Selamat Datang di BioskopIn by Verry");
-                new GUIjava().setVisible(true);
+//                JOptionPane.showMessageDialog(null, "Selamat Datang di BioskopIn by Verry");
+//                new GUIjava().setVisible(true);
             }
         });
     }
@@ -385,6 +414,7 @@ public class GUIjava extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -395,7 +425,6 @@ public class GUIjava extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jmlTiket;
-    private javax.swing.JCheckBox threeCheckBox;
     private javax.swing.JTextField txtNama;
     // End of variables declaration//GEN-END:variables
 }
